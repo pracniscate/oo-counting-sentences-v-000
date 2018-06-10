@@ -20,6 +20,14 @@ class String
   end
 
   def count_sentences
-
+    array = self.split(" ")
+    counter = 0
+      array.each do |x|
+        if x.sentence? || x.question? || x.exclamation? && x.length > 1
+          counter += 1
+        end
+      end
+    counter
   end
+  
 end
